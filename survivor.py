@@ -92,7 +92,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--title",
-        default="Survivor 50 Fantasy Legue",
+        default="Survivor 50 Fantasy League",
         help="Page title shown in the browser and header.",
     )
     parser.add_argument(
