@@ -126,10 +126,6 @@ def load_state() -> dict:
 
 def save_state(eliminated_names: list[str]) -> None:
     STORAGE_DIR.mkdir(parents=True, exist_ok=True)
-
-    if not STATE_FILE.exists():
-        STATE_FILE.touch()
-
     STATE_FILE.write_text(
         json.dumps({"eliminated": eliminated_names}, indent=2),
         encoding="utf-8",
@@ -183,10 +179,10 @@ def render_card(name: str, image_path: str | None, is_eliminated: bool) -> str:
 
 
 def render_group(
-        group_name: str,
-        names: list[str],
-        image_paths: dict[str, str | None],
-        eliminated: set[str],
+    group_name: str,
+    names: list[str],
+    image_paths: dict[str, str | None],
+    eliminated: set[str],
 ) -> str:
     style = TEAM_NAME_STYLES[group_name]
     team_shadow = css_text_shadow(style["border"])
@@ -284,7 +280,7 @@ def build_html(title: str, eliminated_names: list[str]) -> str:
 
     .card-grid {{
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 20px;
     }}
 
@@ -363,6 +359,12 @@ def build_html(title: str, eliminated_names: list[str]) -> str:
       font-weight: 800;
       letter-spacing: 1px;
       white-space: nowrap;
+    }}
+
+    @media (max-width: 1100px) {{
+      .card-grid {{
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }}
     }}
 
     @media (max-width: 900px) {{
