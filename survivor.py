@@ -5,7 +5,8 @@ from pathlib import Path
 
 PROJECT_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = PROJECT_DIR / "survivor_files"
-STATE_FILE = PROJECT_DIR / "site_state.json"
+STORAGE_DIR = Path("/storage") if Path("/storage").exists() else PROJECT_DIR / "storage"
+STATE_FILE = STORAGE_DIR / "site_state.json"
 
 NAME_MAP = {
     "Charlie": "Charlie",
@@ -115,15 +116,20 @@ def parse_args() -> argparse.Namespace:
 
 def load_state() -> dict:
     if not STATE_FILE.exists():
-        return {"eliminated": ["Stephenie K", "Savannah"]}
+        return {"eliminated": []}
 
     try:
         return json.loads(STATE_FILE.read_text(encoding="utf-8"))
     except json.JSONDecodeError:
-        return {"eliminated": ["Stephenie K", "Savannah"]}
+        return {"eliminated": []}
 
 
 def save_state(eliminated_names: list[str]) -> None:
+    STORAGE_DIR.mkdir(parents=True, exist_ok=True)
+
+    if not STATE_FILE.exists():
+        STATE_FILE.touch()
+
     STATE_FILE.write_text(
         json.dumps({"eliminated": eliminated_names}, indent=2),
         encoding="utf-8",
@@ -425,6 +431,7 @@ def main() -> None:
         save_state(eliminated)
 
     print(f"Generated {output_path.name}")
+    print(f"Using state file: {STATE_FILE}")
     print(f"Eliminated: {', '.join(eliminated) if eliminated else 'none'}")
 
 

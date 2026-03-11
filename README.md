@@ -20,5 +20,5 @@ Behavior summary:
 - `survivor.py` - main static site generator
 - `survivor_files/` - source images used in the generated page
 - `index.html` - generated output file
-- `site_state.json` - optional saved eliminated-player state
+- `site_state.json` - optional saved eliminated-player state--
 - `README.md` - project documentation
