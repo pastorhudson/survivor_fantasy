@@ -1,76 +1,46 @@
 {
   "title": "Survivor 50 Fantasy League",
+  "eliminated": [],
   "groups": {
     "Seagrens": [
-      "Charlie",
-      "Stephenie K",
-      "Q",
-      "Dee",
-      "Coach",
-      "Rick",
-      "Jenna",
-      "Christian"
+      { "name": "Charlie", "image": "charlie-davis.jpg" },
+      { "name": "Stephenie K", "image": "stephenie-k.jpg" },
+      { "name": "Q", "image": "q-burdette.jpg" },
+      { "name": "Dee", "image": "dee-valladares.jpg" },
+      { "name": "Coach", "image": "benjamin-coach-wade.jpg" },
+      { "name": "Rick", "image": "rick-devens.jpg" },
+      { "name": "Jenna", "image": "jenna-lewis-dougherty.jpg" },
+      { "name": "Christian", "image": "christian-hubicki.jpg" }
     ],
     "Youngs": [
-      "Cirie",
-      "Kyle",
-      "Jonathan",
-      "Aubry",
-      "Angelina",
-      "Savannah",
-      "Chrissy",
-      "Mike"
+      { "name": "Cirie", "image": "cirie-fields.jpg" },
+      { "name": "Kyle", "image": "kyle-fraser.jpg" },
+      { "name": "Jonathan", "image": "jonathan-young.jpg" },
+      { "name": "Aubry", "image": "aubry-bracco.jpg" },
+      { "name": "Angelina", "image": "angelina-keeley.jpg" },
+      { "name": "Savannah", "image": "savannah-louie.jpg" },
+      { "name": "Chrissy", "image": "chrissy-hofbeck.jpg" },
+      { "name": "Mike", "image": "mike-white.jpg" }
     ],
     "Smiths": [
-      "Colby Donaldson",
-      "Kamila",
-      "Rizo",
-      "Geneieve",
-      "Ozzy",
-      "Joe",
-      "Tiffany",
-      "Emily"
+      { "name": "Colby Donaldson", "image": "colby-donaldson.jpg" },
+      { "name": "Kamila", "image": "kamilla-karthigesu.jpg" },
+      { "name": "Rizo", "image": "rizo-velovic.jpg" },
+      { "name": "Geneieve", "image": "genevieve-mushaluk.jpg" },
+      { "name": "Ozzy", "image": "ozzy-lusth.jpg" },
+      { "name": "Joe", "image": "joe-hunter.jpg" },
+      { "name": "Tiffany", "image": "tiffany-ervin.jpg" },
+      { "name": "Emily", "image": "emily-flippen.jpg" }
     ]
   },
-
-  "name_map": {
-    "Charlie": "Charlie",
-    "Stephenie K": "Stephenie",
-    "Q": "Q",
-    "Dee": "Dee",
-    "Coach": "Coach",
-    "Rick": "Rick",
-    "Jenna": "Jenna",
-    "Christian": "Christian",
-    "Cirie": "Cirie",
-    "Kyle": "Kyle",
-    "Jonathan": "Jonathan",
-    "Aubry": "Aubry",
-    "Angelina": "Angelina",
-    "Savannah": "Savannah",
-    "Chrissy": "Chrissy",
-    "Mike": "mike",
-    "Colby Donaldson": "Colby",
-    "Kamila": "Kamilla",
-    "Rizo": "Rizo",
-    "Geneieve": "Genevieve",
-    "Ozzy": "Ozzy",
-    "Joe": "Joe",
-    "Tiffany": "Tiffany",
-    "Emily": "Emily"
-  },
-
   "team_colors": {
     "Seagrens": "#e27648",
     "Youngs": "#60a7a1",
     "Smiths": "#6fc1d9"
   },
-
   "team_name_styles": {
-    "Seagrens": {"border": "#894b74", "fill": "#e1b14b"},
-    "Youngs": {"border": "#cfb664", "fill": "#38764d"},
-    "Smiths": {"border": "#c6e89c", "fill": "#e2719c"}
-  },
-
-  "eliminated": []
+    "Seagrens": { "border": "#894b74", "fill": "#e1b14b" },
+    "Youngs": { "border": "#cfb664", "fill": "#38764d" },
+    "Smiths": { "border": "#c6e89c", "fill": "#e2719c" }
+  }
 }
