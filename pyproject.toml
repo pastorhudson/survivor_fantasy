@@ -1,0 +1,7 @@
+[project]
+name = "survivor"
+version = "0.1.0"
+description = "Static Survivor cheat sheet site generator"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
