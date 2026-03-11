@@ -1,0 +1,1 @@
+web: sh -c "python survivor.py && python -m http.server ${PORT:-5000}"
