@@ -392,7 +392,6 @@ def build_html(title: str, eliminated_names: list[str]) -> str:
   <main class="page">
     <header class="page-header">
       <h1>{html.escape(title)}</h1>
-
     </header>
     {sections_html}
   </main>
