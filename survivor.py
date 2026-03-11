@@ -5,7 +5,7 @@ from pathlib import Path
 
 PROJECT_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = PROJECT_DIR / "survivor_files"
-STORAGE_DIR = Path("/storage") if Path("/storage").exists() else PROJECT_DIR / "storage"
+STORAGE_DIR = Path("./storage") if Path("./storage").exists() else PROJECT_DIR / "storage"
 STATE_FILE = STORAGE_DIR / "site_state.json"
 
 NAME_MAP = {
