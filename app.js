@@ -1,4 +1,4 @@
-const ASSETS_DIR = "survivor_files";
+const ASSETS_DIR = "./survivor_files";
 
 function cssTextShadow(borderColor) {
   const offsets = [
