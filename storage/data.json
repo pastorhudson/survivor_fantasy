@@ -1,0 +1,76 @@
+{
+  "title": "Survivor 50 Fantasy League",
+  "groups": {
+    "Seagrens": [
+      "Charlie",
+      "Stephenie K",
+      "Q",
+      "Dee",
+      "Coach",
+      "Rick",
+      "Jenna",
+      "Christian"
+    ],
+    "Youngs": [
+      "Cirie",
+      "Kyle",
+      "Jonathan",
+      "Aubry",
+      "Angelina",
+      "Savannah",
+      "Chrissy",
+      "Mike"
+    ],
+    "Smiths": [
+      "Colby Donaldson",
+      "Kamila",
+      "Rizo",
+      "Geneieve",
+      "Ozzy",
+      "Joe",
+      "Tiffany",
+      "Emily"
+    ]
+  },
+
+  "name_map": {
+    "Charlie": "Charlie",
+    "Stephenie K": "Stephenie",
+    "Q": "Q",
+    "Dee": "Dee",
+    "Coach": "Coach",
+    "Rick": "Rick",
+    "Jenna": "Jenna",
+    "Christian": "Christian",
+    "Cirie": "Cirie",
+    "Kyle": "Kyle",
+    "Jonathan": "Jonathan",
+    "Aubry": "Aubry",
+    "Angelina": "Angelina",
+    "Savannah": "Savannah",
+    "Chrissy": "Chrissy",
+    "Mike": "mike",
+    "Colby Donaldson": "Colby",
+    "Kamila": "Kamilla",
+    "Rizo": "Rizo",
+    "Geneieve": "Genevieve",
+    "Ozzy": "Ozzy",
+    "Joe": "Joe",
+    "Tiffany": "Tiffany",
+    "Emily": "Emily"
+  },
+
+  "team_colors": {
+    "Seagrens": "#e27648",
+    "Youngs": "#60a7a1",
+    "Smiths": "#6fc1d9"
+  },
+
+  "team_name_styles": {
+    "Seagrens": {"border": "#894b74", "fill": "#e1b14b"},
+    "Youngs": {"border": "#cfb664", "fill": "#38764d"},
+    "Smiths": {"border": "#c6e89c", "fill": "#e2719c"}
+  },
+
+  "eliminated": []
+}
