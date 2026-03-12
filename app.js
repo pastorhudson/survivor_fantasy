@@ -1,5 +1,9 @@
 const ASSETS_DIR = "./survivor_files";
 const DATA_URL = "./storage/data.json";
+const TOTAL_EPISODES = 13;
+
+let appData = null;
+let selectedEpisode = 1;
 
 function cssTextShadow(borderColor) {
   const offsets = [
@@ -15,8 +19,20 @@ function cssTextShadow(borderColor) {
   return offsets.map(([x, y]) => `${x}px ${y}px 0 ${borderColor}`).join(", ");
 }
 
+function getEliminatedThroughEpisode(data, episodeNumber) {
+  const eliminated = new Set();
+  const eliminationsByEpisode = data.eliminations_by_episode || {};
+
+  for (let ep = 1; ep <= episodeNumber; ep++) {
+    const names = eliminationsByEpisode[String(ep)] || [];
+    names.forEach((name) => eliminated.add(name));
+  }
+
+  return eliminated;
+}
+
 function renderCard(player, eliminatedNames) {
-  const isEliminated = eliminatedNames.includes(player.name);
+  const isEliminated = eliminatedNames.has(player.name);
 
   const card = document.createElement("article");
   card.className = `card${isEliminated ? " eliminated" : ""}`;
@@ -54,7 +70,7 @@ function renderCard(player, eliminatedNames) {
   return card;
 }
 
-function renderGroup(groupName, players, data) {
+function renderGroup(groupName, players, data, eliminatedNames) {
   const section = document.createElement("section");
   section.className = "tribe";
   section.style.setProperty("--tribe-bg", data.team_colors[groupName] || "#888");
@@ -74,7 +90,7 @@ function renderGroup(groupName, players, data) {
   grid.className = "card-grid";
 
   players.forEach((player) => {
-    grid.appendChild(renderCard(player, data.eliminated || []));
+    grid.appendChild(renderCard(player, eliminatedNames));
   });
 
   section.appendChild(title);
@@ -83,23 +99,60 @@ function renderGroup(groupName, players, data) {
   return section;
 }
 
+function renderEpisodeButtons() {
+  const nav = document.querySelector("#episode-nav");
+  if (!nav) return;
+
+  nav.innerHTML = "";
+
+  for (let ep = 1; ep <= TOTAL_EPISODES; ep++) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `episode-bubble${ep === selectedEpisode ? " active" : ""}`;
+    button.textContent = ep;
+    button.setAttribute("aria-label", `Episode ${ep}`);
+
+    button.addEventListener("click", () => {
+      selectedEpisode = ep;
+      renderPage();
+    });
+
+    nav.appendChild(button);
+  }
+}
+
+function renderPage() {
+  if (!appData) return;
+
+  document.title = appData.title || "Survivor";
+  document.querySelector("#page-title").textContent = appData.title || "Survivor";
+
+  const episodeLabel = document.querySelector("#episode-label");
+  if (episodeLabel) {
+    episodeLabel.textContent = `Showing eliminations through Episode ${selectedEpisode}`;
+  }
+
+  renderEpisodeButtons();
+
+  const container = document.querySelector("#content");
+  container.innerHTML = "";
+
+  const eliminatedNames = getEliminatedThroughEpisode(appData, selectedEpisode);
+
+  Object.entries(appData.groups || {}).forEach(([groupName, players]) => {
+    container.appendChild(renderGroup(groupName, players, appData, eliminatedNames));
+  });
+}
+
 async function init() {
   const response = await fetch(DATA_URL, { cache: "no-store" });
   if (!response.ok) {
     throw new Error(`Failed to load ${DATA_URL}: ${response.status}`);
   }
 
-  const data = await response.json();
-
-  document.title = data.title || "Survivor";
-  document.querySelector("#page-title").textContent = data.title || "Survivor";
-
-  const container = document.querySelector("#content");
-  container.innerHTML = "";
-
-  Object.entries(data.groups || {}).forEach(([groupName, players]) => {
-    container.appendChild(renderGroup(groupName, players, data));
-  });
+  appData = await response.json();
+  selectedEpisode = 1; // always start on episode 1
+  renderPage();
 }
 
 init().catch((err) => {

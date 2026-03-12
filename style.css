@@ -174,3 +174,49 @@ body {
         font-size: 1.5rem;
     }
 }
+
+.episode-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0 28px;
+  align-items: center;
+}
+
+.episode-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.episode-bubble {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 2px solid #ffffff;
+  background: #2f3a4f;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.episode-bubble:hover {
+  transform: translateY(-1px);
+}
+
+.episode-bubble.active {
+  background: #f0b84b;
+  color: #1c1c1c;
+  border-color: #ffe3a3;
+}
+
+.episode-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2f3a4f;
+  text-align: center;
+}

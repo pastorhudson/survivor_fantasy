@@ -1,6 +1,20 @@
 {
   "title": "Survivor 50 Fantasy League",
-  "eliminated": ["Savannah", "Jenna", "Kyle", "Q"],
+  "eliminations_by_episode": {
+    "1": [],
+    "2": ["Savannah"],
+    "3": ["Jenna"],
+    "4": ["Kyle"],
+    "5": ["Q"],
+    "6": [],
+    "7": [],
+    "8": [],
+    "9": [],
+    "10": [],
+    "11": [],
+    "12": [],
+    "13": []
+  },
   "groups": {
     "Seagrens": [
       { "name": "Charlie", "image": "charlie-davis.jpg" },
