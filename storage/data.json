@@ -1,6 +1,6 @@
 {
   "title": "Survivor 50 Fantasy League",
-  "eliminated": [],
+  "eliminated": ["Savannah", "Jenna", "Kyle", "Q"],
   "groups": {
     "Seagrens": [
       { "name": "Charlie", "image": "charlie-davis.jpg" },
