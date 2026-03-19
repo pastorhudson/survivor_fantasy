@@ -78,8 +78,20 @@ name_map = {
 paths = {n: find_img(k) for n, k in name_map.items()}
 
 eliminated = {
-    "Stephenie K": True,
+    # "Stephenie K": True,
     "Savannah": True,
+    "Jenna": True,
+    "Mike": True,
+    "Q": True,
+    "Kyle": True,
+    # "Genevieve": True,
+    # "Ozzy": True,
+    # "Emily": True,
+    # "Angelina": True,
+    # "Jonathan": True,
+    # "Kamilla": True,
+    # "Rizo": True,
+    # "Joe": True,
 }
 
 groups = {
